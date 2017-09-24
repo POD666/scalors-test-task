@@ -60,6 +60,7 @@ Please note that we don't accept solutions without periodic commits or if we are
 
 ### Setup & Run
 
+```bash
 git clone git@github.com:POD666/scalors-test-task.git
 cd scalors-test-task/
 
@@ -74,3 +75,4 @@ cd myproject/
 # start celery in background, use 'fg' ctrl+c to stop
 celery -A myproject worker -l info &
 ./manage.py runserver
+```
