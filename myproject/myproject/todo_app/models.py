@@ -24,3 +24,18 @@ class TODO(models.Model):
 
     def __unicode__(self):
         return unicode(self.title)
+
+
+class Reminder(models.Model):
+    post_url = models.URLField()
+    text = models.TextField()
+    delay = models.IntegerField()
+
+    def __unicode__(self):
+        return unicode(self.post_url)
+
+    def save(self, *args, **kwargs):
+        super(Reminder, self).save(*args, **kwargs)
+        if self.delay:
+            # start task
+            pass

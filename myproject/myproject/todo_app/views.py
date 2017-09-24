@@ -1,8 +1,9 @@
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
-from .models import Board, TODO
-from .serializers import BoardSerializer, TODOSerializer
+from rest_framework import mixins
+from .models import Board, TODO, Reminder
+from .serializers import BoardSerializer, TODOSerializer, ReminderSerializer
 
 
 class BoardViewSet(viewsets.ModelViewSet):
@@ -26,3 +27,12 @@ class BoardViewSet(viewsets.ModelViewSet):
 class TODOViewSet(viewsets.ModelViewSet):
     queryset = TODO.objects.all()
     serializer_class = TODOSerializer
+
+
+class ReminderViewSet(mixins.CreateModelMixin,
+                      mixins.RetrieveModelMixin,
+                      mixins.DestroyModelMixin,
+                      mixins.ListModelMixin,
+                      viewsets.GenericViewSet):
+    queryset = Reminder.objects.all()
+    serializer_class = ReminderSerializer

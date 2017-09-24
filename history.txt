@@ -7,3 +7,5 @@
 7. implementing todo_count field
 8. implementing uncompleted TODOs endpoint
 9. adding fixture
+after a short coffe break
+10. creating reminders model && configuring REST
