@@ -1,3 +1,4 @@
 1. creating virtualenv
 2. creating initial project
 3. creating initial todo_app 
+4. creating board model
