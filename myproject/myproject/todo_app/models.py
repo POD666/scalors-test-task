@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from .tasks import execute_reminder
 
 
 class Board(models.Model):
@@ -37,5 +38,6 @@ class Reminder(models.Model):
     def save(self, *args, **kwargs):
         super(Reminder, self).save(*args, **kwargs)
         if self.delay:
-            # start task
+            seconds = self.delay * 60
+            execute_reminder.apply_async((self.pk,), countdown=seconds)
             pass

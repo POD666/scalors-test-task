@@ -125,3 +125,5 @@ STATIC_URL = '/static/'
 
 # Celery
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_TASK_SERIALIZER = "json"
+CELERY_ACCEPT_CONTENT = ['application/json']
