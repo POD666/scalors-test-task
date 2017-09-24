@@ -58,3 +58,19 @@ Please use celery to implement the delayed execution.
 
 Please note that we don't accept solutions without periodic commits or if we are unable to execute the solution.
 
+### Setup & Run
+
+git clone git@github.com:POD666/scalors-test-task.git
+cd scalors-test-task/
+
+virtualenv env
+source env/bin/activate
+pip install -r requirements.txt
+
+cd myproject/
+./manage.py migrate
+./manage.py loaddata fixture.json
+
+# start celery in background, use 'fg' ctrl+c to stop
+celery -A myproject worker -l info &
+./manage.py runserver

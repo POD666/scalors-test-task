@@ -11,3 +11,4 @@ after a short coffe break
 10. creating reminders model && configuring REST
 11. getting started celery using redis
 12. fire task on Reminder.save && post request
+13. preparing & testing instructions to run, creating repo etc
