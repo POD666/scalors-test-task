@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Board
-from .serializers import BoardSerializer
+from .models import Board, TODO
+from .serializers import BoardSerializer, TODOSerializer
 
 
 class BoardViewSet(viewsets.ModelViewSet):
@@ -11,3 +11,8 @@ class BoardViewSet(viewsets.ModelViewSet):
         response = super(BoardViewSet, self).list(request, *args, **kwargs)
         # add todo_count to response here, but later
         return response
+
+
+class TODOViewSet(viewsets.ModelViewSet):
+    queryset = TODO.objects.all()
+    serializer_class = TODOSerializer
