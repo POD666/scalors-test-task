@@ -3,11 +3,18 @@ from .models import Board, TODO
 
 
 class BoardSerializer(serializers.HyperlinkedModelSerializer):
-    todos = serializers.HyperlinkedRelatedField(queryset=TODO.objects.all(), view_name='todo-detail', many=True)
+    todos = serializers.HyperlinkedRelatedField(
+        queryset=TODO.objects.all(),
+        view_name='todo-detail',
+        many=True
+    )
+    uncompleted = serializers.HyperlinkedIdentityField(
+        view_name='board-uncompleted'
+    )
 
     class Meta:
         model = Board
-        fields = ('url', 'name', 'todos')
+        fields = ('url', 'name', 'todos', 'uncompleted')
 
 
 class TODOSerializer(serializers.HyperlinkedModelSerializer):

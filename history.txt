@@ -5,3 +5,4 @@
 5. configuring REST for board
 6. creating todo model && configuring REST for todo
 7. implementing todo_count field
+8. implementing uncompleted TODOs endpoint
