@@ -2,3 +2,4 @@
 2. creating initial project
 3. creating initial todo_app 
 4. creating board model
+5. configuring REST for board
