@@ -9,3 +9,4 @@
 9. adding fixture
 after a short coffe break
 10. creating reminders model && configuring REST
+11. getting started celery using redis
