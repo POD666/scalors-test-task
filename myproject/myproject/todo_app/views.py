@@ -9,7 +9,8 @@ class BoardViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         response = super(BoardViewSet, self).list(request, *args, **kwargs)
-        # add todo_count to response here, but later
+        for board in response.data:
+            board['todo_count'] = len(board.pop('todos'))
         return response
 
 

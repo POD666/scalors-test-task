@@ -17,7 +17,7 @@ class TODO(models.Model):
     title = models.CharField(max_length=255)
     done = models.BooleanField()
 
-    board = models.ForeignKey(Board)
+    board = models.ForeignKey(Board, related_name='todos')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
