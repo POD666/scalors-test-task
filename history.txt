@@ -6,3 +6,4 @@
 6. creating todo model && configuring REST for todo
 7. implementing todo_count field
 8. implementing uncompleted TODOs endpoint
+9. adding fixture
