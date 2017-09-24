@@ -1,1 +1,2 @@
 1. creating virtualenv
+2. creating initial project
